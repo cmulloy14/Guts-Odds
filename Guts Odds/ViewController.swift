@@ -28,6 +28,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case highCard, pair
     }
     
+    
     class AllHighCardSets {
         let cards = [3,4,5,6,7,8,9,10,11,12,13,14]
         
@@ -61,18 +62,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         func numberOfCardsInLowerSetThan(set : CardSet) -> Int {
-            var lowCardSets : [CardSet] = []
             var num = 0
             for cardSetColumn in cardSetColumns {
                 for cardset in cardSetColumn.cardSets {
                     if set.card1 == cardset.card1 && set.card2 == cardset.card2 {
                         return num
                     }
-                    print (cardset.card1)
-                    print (cardset.card2)
                     num = num + cardset.number
-                    print (num)
-                    
                 }
             }
             return -1
@@ -86,10 +82,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             cardSets = []
             for card in 2...number-1 {
                     cardSets.append(CardSet(type: type, card1: number, card2: card))
-            }
-            
-            for set in cardSets {
-                //3print(cardDescription(card: set.card1) + " - " + cardDescription(card: set.card2))
             }
             cardForColumn = number
         }
@@ -139,6 +131,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         card1PickerView.selectRow(1, inComponent: 0, animated: true)
         
         let allHighCardSets = AllHighCardSets()
@@ -155,51 +148,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         chance = Double(round(1000*chance)/1000)
         
         cardsLabel.text = chance.description
-        
-        print("Num cards below: " + num.description)
-        print ("Total num: " + allHighCardSets.totalNum.description)
-        print ("Chancce: " + chance.description)
     
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        if pickerView == card1PickerView {
-            return 1
-        }
-        else if pickerView == card2PickerView {
-            return 1
-        }
-        else {
-            return 1
-        }
-    }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == card1PickerView {
-            return cards.count
-        }
-        else if pickerView == card2PickerView {
-            return cards.count
-        }
-        else {
-            return numPlayers.count
-        }
+        return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == card1PickerView {
-            return cardDescription(card: cards[row])
-        }
-        else if pickerView == card2PickerView {
-            return cardDescription(card: cards[row])
-        }
-        else {
-            return numPlayers[row].description
-        }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerView == card1PickerView || pickerView == card2PickerView ? cards.count : numPlayers.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == card1PickerView {
-            
             if (myCard2 == cards[row]) {
                 if (row != 0) {
                     pickerView.selectRow(row - 1, inComponent: 0, animated: true)
@@ -232,11 +193,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
         }
         else {
-            print("num players picker moved")
             numberOfPlayers = numPlayers[row]
             calculateOddsForCardSet(cardSet: CardSet(type: .highCard, card1: myCard1, card2: myCard2))
         }
-        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: pickerView == card1PickerView || pickerView == card2PickerView ? cardDescription(card: cards[row]) : numPlayers[row].description, attributes: [NSForegroundColorAttributeName:UIColor.white])
     }
 
     func calculateOddsForCardSet (cardSet : CardSet) {
@@ -246,31 +209,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         allHighCardSets.reduceNumberFromSetsWithCard(card: cardSet.card2)
         
         let num = allHighCardSets.numberOfCardsInLowerSetThan(set: cardSet)
+        let divisor : Double = Double(numberOfPlayers) - 1
+        let chance : Double = Double(num) / Double(allHighCardSets.totalNum + (13*12))
         
-        let divisor : Double = Double(numberOfPlayers) - 2
+        var finalChance : Double = 1
         
+        finalChance = pow(chance, divisor)
+        finalChance = finalChance * 100
+        finalChance = Double(round(1000*finalChance)/1000)
         
-        var chance : Double = Double(num) / Double(allHighCardSets.totalNum + (13*12))
-        
-        if(divisor >= 1) {
-            for x in 1...Int(divisor) {
-                chance = chance * chance
-                print(x)
-            }
-        }
-        //chance = chance / divisor
-        chance = chance * 100
-        
-        
-        
-        
-        chance = Double(round(1000*chance)/1000)
-        
-        cardsLabel.text = chance.description
-        
-        print("Num cards below: " + num.description)
-        print ("Total num: " + allHighCardSets.totalNum.description)
-        print ("Chancce: " + chance.description)
+        cardsLabel.text = finalChance.description
     }
     func cardDescription(card : Int) -> String{
         switch card {
@@ -287,4 +235,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
 }
+
+
+
 
