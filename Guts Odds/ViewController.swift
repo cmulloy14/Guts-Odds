@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource{
 
     @IBOutlet weak var card1PickerView: UIPickerView!
     @IBOutlet weak var card2PickerView: UIPickerView!
     @IBOutlet weak var numberOfPlayersPickerView: UIPickerView!
     @IBOutlet weak var cardsLabel: UILabel!
+    
+    @IBOutlet weak var card1CollectionView: UICollectionView!
     
     let cards = [2,3,4,5,6,7,8,9,10,11,12,13,14]
     let numPlayers = [2,3,4,5,6,7,8,9,10]
@@ -129,8 +131,30 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 3
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selected card")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell : CardCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
+        
+        
+        return cell
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.card1CollectionView.register(UINib.init(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
         
         card1PickerView.selectRow(1, inComponent: 0, animated: true)
         
@@ -235,6 +259,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
 }
+
+
 
 
 

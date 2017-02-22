@@ -13,6 +13,8 @@
 		FC4C1E4E1E29483B009B5127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4C1E4D1E29483B009B5127 /* Assets.xcassets */; };
 		FC4C1E511E29483B009B5127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4C1E4F1E29483B009B5127 /* LaunchScreen.storyboard */; };
 		FC4C1E5C1E29483B009B5127 /* Guts_OddsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C1E5B1E29483B009B5127 /* Guts_OddsTests.swift */; };
+		FC6822B31E5D50AD00832522 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */; };
+		FC6822B41E5D50AD00832522 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		FC4C1E571E29483B009B5127 /* Guts OddsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Guts OddsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4C1E5B1E29483B009B5127 /* Guts_OddsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guts_OddsTests.swift; sourceTree = "<group>"; };
 		FC4C1E5D1E29483B009B5127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				FC4C1E461E29483B009B5127 /* AppDelegate.swift */,
 				FC4C1E481E29483B009B5127 /* ViewController.swift */,
+				FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */,
+				FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */,
 				FC4C1E4A1E29483B009B5127 /* Main.storyboard */,
 				FC4C1E4D1E29483B009B5127 /* Assets.xcassets */,
 				FC4C1E4F1E29483B009B5127 /* LaunchScreen.storyboard */,
@@ -181,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6822B41E5D50AD00832522 /* CardCollectionViewCell.xib in Resources */,
 				FC4C1E511E29483B009B5127 /* LaunchScreen.storyboard in Resources */,
 				FC4C1E4E1E29483B009B5127 /* Assets.xcassets in Resources */,
 				FC4C1E4C1E29483B009B5127 /* Main.storyboard in Resources */,
@@ -202,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4C1E491E29483B009B5127 /* ViewController.swift in Sources */,
+				FC6822B31E5D50AD00832522 /* CardCollectionViewCell.swift in Sources */,
 				FC4C1E471E29483B009B5127 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +418,7 @@
 				FC4C1E621E29483B009B5127 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC4C1E631E29483B009B5127 /* Build configuration list for PBXNativeTarget "Guts OddsTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +427,7 @@
 				FC4C1E651E29483B009B5127 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
