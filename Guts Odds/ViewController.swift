@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource{
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var card1PickerView: UIPickerView!
     @IBOutlet weak var card2PickerView: UIPickerView!
     @IBOutlet weak var numberOfPlayersPickerView: UIPickerView!
     @IBOutlet weak var cardsLabel: UILabel!
     
-    @IBOutlet weak var card1CollectionView: UICollectionView!
+    
     
     let cards = [2,3,4,5,6,7,8,9,10,11,12,13,14]
     let numPlayers = [2,3,4,5,6,7,8,9,10]
@@ -25,136 +25,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var numberOfPlayers = 2
     
-    
-    enum cardSetType {
-        case highCard, pair
-    }
-    
-    
-    class AllHighCardSets {
-        let cards = [3,4,5,6,7,8,9,10,11,12,13,14]
-        
-        var totalNum = 0
-        var cardSetColumns : [CardSetColumn]
-        
-        init() {
-            cardSetColumns = []
-            for card in cards {
-               cardSetColumns.append(CardSetColumn(type: .highCard, number: card))
-            }
-            for cardSetColumn in cardSetColumns {
-                for cardSet in cardSetColumn.cardSets {
-                    totalNum += cardSet.number
-                }
-            }
-        }
-        
-        func reduceNumberFromSetsWithCard(card : Int) {
-            totalNum = 0
-            for cardSetColumn in cardSetColumns {
-                for cardSet in cardSetColumn.cardSets {
-                    cardSet.removeCardFromSet(card: card)
-                }
-            }
-            for cardSetColumn in cardSetColumns {
-                for cardSet in cardSetColumn.cardSets {
-                    totalNum += cardSet.number
-                }
-            }
-        }
-        
-        func numberOfCardsInLowerSetThan(set : CardSet) -> Int {
-            var num = 0
-            for cardSetColumn in cardSetColumns {
-                for cardset in cardSetColumn.cardSets {
-                    if set.card1 == cardset.card1 && set.card2 == cardset.card2 {
-                        return num
-                    }
-                    num = num + cardset.number
-                }
-            }
-            return -1
-        }
-    }
-    class CardSetColumn {
-        var cardSets : [CardSet]
-        var cardForColumn : Int
-        
-        init(type : cardSetType, number : Int) {
-            cardSets = []
-            for card in 2...number-1 {
-                    cardSets.append(CardSet(type: type, card1: number, card2: card))
-            }
-            cardForColumn = number
-        }
-        
-        func cardDescription(card : Int) -> String{
-            switch card {
-            case 11:
-                return "J"
-            case 12:
-                return "Q"
-            case 13:
-                return "K"
-            case 14:
-                return "A"
-            default:
-                return card.description
-            }
-        }
-    }
-    
-    class CardSet {
-        
-        var type : cardSetType
-        var card1 : Int
-        var card2 : Int
-        var number : Int
-        
-        init(type : cardSetType, card1 : Int, card2 : Int) {
-            self.type = type
-            if(type == .highCard) {
-                number = 32
-            }
-            else {
-                number = 12
-            }
-            self.card1 = card1
-            self.card2 = card2
-        }
-        
-        func removeCardFromSet (card : Int) {
-            if(card1 == card || card2 == card) {
-                number = 24
-            }
-        }
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 3
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected card")
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell : CardCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
-        
-        
-        return cell
-    }
-    
-    
+ 
+    let cardHeight: CGFloat = 150.0
+    let cardWidth: CGFloat = 100.0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        self.card1CollectionView.register(UINib.init(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
         
         card1PickerView.selectRow(1, inComponent: 0, animated: true)
         
@@ -181,6 +59,33 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerView == card1PickerView || pickerView == card2PickerView ? cards.count : numPlayers.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        guard pickerView == card1PickerView || pickerView == card2PickerView else {
+            return UIView()
+        }
+        
+        var myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width - 30, height: cardHeight))
+        
+        var myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: cardWidth, height: cardHeight))
+
+        myImageView.image = UIImage(named: "card2")
+    
+        myView.addSubview(myImageView)
+        
+        return myView
+        
+        //return UIImageView.init(image: UIImage(named: "card2"))
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return cardHeight
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return cardWidth
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -222,9 +127,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        return NSAttributedString(string: pickerView == card1PickerView || pickerView == card2PickerView ? cardDescription(card: cards[row]) : numPlayers[row].description, attributes: [NSForegroundColorAttributeName:UIColor.white])
-    }
+//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+//        return NSAttributedString(string: pickerView == card1PickerView || pickerView == card2PickerView ? cardDescription(card: cards[row]) : numPlayers[row].description, attributes: [NSForegroundColorAttributeName:UIColor.white])
+//    }
 
     func calculateOddsForCardSet (cardSet : CardSet) {
         let allHighCardSets = AllHighCardSets()

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC2E0BB920797A5500BA3EE4 /* AllHighCardSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BB820797A5500BA3EE4 /* AllHighCardSets.swift */; };
+		FC2E0BBB20797A8A00BA3EE4 /* CardSetColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BBA20797A8A00BA3EE4 /* CardSetColumn.swift */; };
+		FC2E0BBD20797AAB00BA3EE4 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */; };
 		FC4C1E471E29483B009B5127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C1E461E29483B009B5127 /* AppDelegate.swift */; };
 		FC4C1E491E29483B009B5127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C1E481E29483B009B5127 /* ViewController.swift */; };
 		FC4C1E4C1E29483B009B5127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4C1E4A1E29483B009B5127 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC2E0BB820797A5500BA3EE4 /* AllHighCardSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHighCardSets.swift; sourceTree = "<group>"; };
+		FC2E0BBA20797A8A00BA3EE4 /* CardSetColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetColumn.swift; sourceTree = "<group>"; };
+		FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		FC4C1E431E29483B009B5127 /* Guts Odds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guts Odds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4C1E461E29483B009B5127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC4C1E481E29483B009B5127 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				FC4C1E461E29483B009B5127 /* AppDelegate.swift */,
+				FC2E0BB820797A5500BA3EE4 /* AllHighCardSets.swift */,
+				FC2E0BBA20797A8A00BA3EE4 /* CardSetColumn.swift */,
 				FC4C1E481E29483B009B5127 /* ViewController.swift */,
+				FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */,
 				FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */,
 				FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */,
 				FC4C1E4A1E29483B009B5127 /* Main.storyboard */,
@@ -210,6 +219,9 @@
 			files = (
 				FC4C1E491E29483B009B5127 /* ViewController.swift in Sources */,
 				FC6822B31E5D50AD00832522 /* CardCollectionViewCell.swift in Sources */,
+				FC2E0BBB20797A8A00BA3EE4 /* CardSetColumn.swift in Sources */,
+				FC2E0BB920797A5500BA3EE4 /* AllHighCardSets.swift in Sources */,
+				FC2E0BBD20797AAB00BA3EE4 /* CardSet.swift in Sources */,
 				FC4C1E471E29483B009B5127 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
