@@ -20,12 +20,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let cards = [2,3,4,5,6,7,8,9,10,11,12,13,14]
     let numPlayers = [2,3,4,5,6,7,8,9,10]
     
+    var cardStrings: [String] {
+        return cards.map { cardDescription(card: $0) }
+    }
+    
     var myCard1 = 2
     var myCard2 = 2
     
     var numberOfPlayers = 2
     
- 
+    let numPickerDelegate = NumPlayerPickerViewDelegate()
+
     let cardHeight: CGFloat = 150.0
     let cardWidth: CGFloat = 100.0
     
@@ -49,6 +54,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         chance = Double(round(1000*chance)/1000)
         
+        numberOfPlayersPickerView.delegate = numPickerDelegate
+        numberOfPlayersPickerView.dataSource = numPickerDelegate
+        numPickerDelegate.vcDelegate = self
+        
         cardsLabel.text = chance.description
     
     }
@@ -63,15 +72,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        guard pickerView == card1PickerView || pickerView == card2PickerView else {
-            return UIView()
-        }
-        
         var myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width - 30, height: cardHeight))
         
         var myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: cardWidth, height: cardHeight))
 
-        myImageView.image = UIImage(named: "card2")
+        myImageView.image = UIImage(named: "\(cardStrings[row])H" )
     
         myView.addSubview(myImageView)
         
@@ -89,6 +94,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        defer {
+            pickersChanged()
+        }
         if pickerView == card1PickerView {
             if (myCard2 == cards[row]) {
                 if (row != 0) {
@@ -101,8 +109,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             myCard1 = cards[row]
             
-            calculateOddsForCardSet(cardSet: CardSet(type: .highCard, card1: myCard1, card2: myCard2))
-        
         }
         else if pickerView == card2PickerView {
             
@@ -117,13 +123,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             myCard2 = cards[row]
             
-            calculateOddsForCardSet(cardSet: CardSet(type: .highCard, card1: myCard1, card2: myCard2))
-            
-            
-        }
-        else {
-            numberOfPlayers = numPlayers[row]
-            calculateOddsForCardSet(cardSet: CardSet(type: .highCard, card1: myCard1, card2: myCard2))
         }
     }
     
@@ -131,6 +130,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //        return NSAttributedString(string: pickerView == card1PickerView || pickerView == card2PickerView ? cardDescription(card: cards[row]) : numPlayers[row].description, attributes: [NSForegroundColorAttributeName:UIColor.white])
 //    }
 
+   
     func calculateOddsForCardSet (cardSet : CardSet) {
         let allHighCardSets = AllHighCardSets()
        //let cardSet = CardSet(type: .highCard, card1: 3, card2: 2)
@@ -138,7 +138,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         allHighCardSets.reduceNumberFromSetsWithCard(card: cardSet.card2)
         
         let num = allHighCardSets.numberOfCardsInLowerSetThan(set: cardSet)
-        let divisor : Double = Double(numberOfPlayers) - 1
+        let divisor : Double = Double(numPickerDelegate.currentSelection) - 1
         let chance : Double = Double(num) / Double(allHighCardSets.totalNum + (13*12))
         
         var finalChance : Double = 1
@@ -165,6 +165,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 }
 
+extension ViewController: pickerVCDelegate {
+    func pickersChanged() {
+        calculateOddsForCardSet(cardSet: CardSet(type: .highCard, card1: myCard1, card2: myCard2))
+    }
+}
 
 
 

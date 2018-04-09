@@ -10,6 +10,7 @@
 		FC2E0BB920797A5500BA3EE4 /* AllHighCardSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BB820797A5500BA3EE4 /* AllHighCardSets.swift */; };
 		FC2E0BBB20797A8A00BA3EE4 /* CardSetColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BBA20797A8A00BA3EE4 /* CardSetColumn.swift */; };
 		FC2E0BBD20797AAB00BA3EE4 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */; };
+		FC2E0BBF207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BBE207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift */; };
 		FC4C1E471E29483B009B5127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C1E461E29483B009B5127 /* AppDelegate.swift */; };
 		FC4C1E491E29483B009B5127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C1E481E29483B009B5127 /* ViewController.swift */; };
 		FC4C1E4C1E29483B009B5127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4C1E4A1E29483B009B5127 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		FC2E0BB820797A5500BA3EE4 /* AllHighCardSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHighCardSets.swift; sourceTree = "<group>"; };
 		FC2E0BBA20797A8A00BA3EE4 /* CardSetColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetColumn.swift; sourceTree = "<group>"; };
 		FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
+		FC2E0BBE207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPlayerPickerViewDelegate.swift; sourceTree = "<group>"; };
 		FC4C1E431E29483B009B5127 /* Guts Odds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guts Odds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4C1E461E29483B009B5127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC4C1E481E29483B009B5127 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */,
 				FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */,
 				FC4C1E4A1E29483B009B5127 /* Main.storyboard */,
+				FC2E0BBE207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift */,
 				FC4C1E4D1E29483B009B5127 /* Assets.xcassets */,
 				FC4C1E4F1E29483B009B5127 /* LaunchScreen.storyboard */,
 				FC4C1E521E29483B009B5127 /* Info.plist */,
@@ -223,6 +226,7 @@
 				FC2E0BB920797A5500BA3EE4 /* AllHighCardSets.swift in Sources */,
 				FC2E0BBD20797AAB00BA3EE4 /* CardSet.swift in Sources */,
 				FC4C1E471E29483B009B5127 /* AppDelegate.swift in Sources */,
+				FC2E0BBF207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
