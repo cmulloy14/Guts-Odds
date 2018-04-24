@@ -9,10 +9,10 @@
 import Foundation
 
 class CardSetColumn {
-    var cardSets : [CardSet]
-    var cardForColumn : Int
+    var cardSets: [CardSet]
+    var cardForColumn: Int
     
-    init(type : cardSetType, number : Int) {
+    init(type: cardSetType, number: Int) {
         cardSets = []
         for card in 2...number-1 {
             cardSets.append(CardSet(type: type, card1: number, card2: card))

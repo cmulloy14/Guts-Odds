@@ -19,6 +19,9 @@ class CardSet {
     var type : cardSetType
     var card1 : Int
     var card2 : Int
+    
+    //number reperesents the number of cards in the card set
+    //any high card set will have
     var number : Int
     
     init(type : cardSetType, card1 : Int, card2 : Int) {

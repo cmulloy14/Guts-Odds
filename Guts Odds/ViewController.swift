@@ -24,6 +24,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return cards.map { cardDescription(card: $0) }
     }
     
+    var selectedCardType: cardSetType {
+        return myCard1 == myCard2 ? .pair : .highCard
+    }
+    
     var myCard1 = 2
     var myCard2 = 2
     
@@ -98,50 +102,37 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             pickersChanged()
         }
         if pickerView == card1PickerView {
-            if (myCard2 == cards[row]) {
-                if (row != 0) {
-                    pickerView.selectRow(row - 1, inComponent: 0, animated: true)
-                }
-                else {
-                    pickerView.selectRow(row + 1, inComponent: 0, animated: true)
-                }
-                return
-            }
             myCard1 = cards[row]
-            
         }
         else if pickerView == card2PickerView {
-            
-            if (myCard1 == cards[row]) {
-                if (row != 0) {
-                    pickerView.selectRow(row - 1, inComponent: 0, animated: true)
-                }
-                else {
-                    pickerView.selectRow(row + 1, inComponent: 0, animated: true)
-                }
-                return
-            }
             myCard2 = cards[row]
-            
         }
     }
     
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        return NSAttributedString(string: pickerView == card1PickerView || pickerView == card2PickerView ? cardDescription(card: cards[row]) : numPlayers[row].description, attributes: [NSForegroundColorAttributeName:UIColor.white])
-//    }
-
-   
-    func calculateOddsForCardSet (cardSet : CardSet) {
+    func calculateOddsForCardSet(cardSet : CardSet) {
         let allHighCardSets = AllHighCardSets()
-       //let cardSet = CardSet(type: .highCard, card1: 3, card2: 2)
+       
+        if selectedCardType == .pair {
+            let allLowerCardsNum = allHighCardSets.totalNum
+            
+            var addedPairValue = 0
+            
+            for card in cards {
+                if card == myCard1 {
+                    
+                }
+            }
+        }
+        
         allHighCardSets.reduceNumberFromSetsWithCard(card: cardSet.card1)
         allHighCardSets.reduceNumberFromSetsWithCard(card: cardSet.card2)
         
         let num = allHighCardSets.numberOfCardsInLowerSetThan(set: cardSet)
-        let divisor : Double = Double(numPickerDelegate.currentSelection) - 1
-        let chance : Double = Double(num) / Double(allHighCardSets.totalNum + (13*12))
+        let divisor: Double = Double(numPickerDelegate.currentSelection) - 1
         
-        var finalChance : Double = 1
+        let chance: Double = Double(num) / Double(allHighCardSets.totalNum + (13*6))
+        
+        var finalChance: Double = 1
         
         finalChance = pow(chance, divisor)
         finalChance = finalChance * 100
@@ -167,7 +158,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
 extension ViewController: pickerVCDelegate {
     func pickersChanged() {
-        calculateOddsForCardSet(cardSet: CardSet(type: .highCard, card1: myCard1, card2: myCard2))
+        calculateOddsForCardSet(cardSet: CardSet(type: selectedCardType, card1: myCard1, card2: myCard2))
     }
 }
 
