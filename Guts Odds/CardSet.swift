@@ -6,17 +6,12 @@
 //  Copyright © 2018 Mulloy, Charles. All rights reserved.
 //
 
-
-enum cardSetType {
-    case highCard, pair
-}
-
-
 import Foundation
 
-class CardSet {
+
+struct CardSet {
     
-    var type : cardSetType
+    var type : CardSetType
     var card1 : Int
     var card2 : Int
     
@@ -24,7 +19,7 @@ class CardSet {
     //any high card set will have
     var number : Int
     
-    init(type : cardSetType, card1 : Int, card2 : Int) {
+    init(type : CardSetType, card1 : Int, card2 : Int) {
         self.type = type
         if(type == .highCard) {
             number = 32
@@ -36,7 +31,7 @@ class CardSet {
         self.card2 = card2
     }
     
-    func removeCardFromSet (card : Int) {
+    mutating func removeCardFromSet (card : Int) {
         if(card1 == card || card2 == card) {
             number = 24
         }

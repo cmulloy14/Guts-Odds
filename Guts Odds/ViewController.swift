@@ -15,8 +15,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var numberOfPlayersPickerView: UIPickerView!
     @IBOutlet weak var cardsLabel: UILabel!
     
-    
-    
     let cards = [2,3,4,5,6,7,8,9,10,11,12,13,14]
     let numPlayers = [2,3,4,5,6,7,8,9,10]
     
@@ -24,20 +22,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return cards.map { cardDescription(card: $0) }
     }
     
-    var selectedCardType: cardSetType {
+    var selectedCardType: CardSetType {
         return myCard1 == myCard2 ? .pair : .highCard
     }
     
+    //MARK: Default Values
     var myCard1 = 2
     var myCard2 = 2
-    
     var numberOfPlayers = 2
-    
-    let numPickerDelegate = NumPlayerPickerViewDelegate()
-
     let cardHeight: CGFloat = 150.0
     let cardWidth: CGFloat = 100.0
     
+    
+    let numPickerDelegate = NumPlayerPickerViewDelegate()
+
+    var cardSize: CGSize {
+        return CGSize(width: cardWidth, height: cardHeight)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         card1PickerView.selectRow(1, inComponent: 0, animated: true)
         
-        let allHighCardSets = AllHighCardSets()
+        var allHighCardSets = AllHighCardSets()
         let cardSet = CardSet(type: .highCard, card1: 3, card2: 2)
         allHighCardSets.reduceNumberFromSetsWithCard(card: cardSet.card1)
         allHighCardSets.reduceNumberFromSetsWithCard(card: cardSet.card2)
@@ -76,17 +77,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        var myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width - 30, height: cardHeight))
-        
-        var myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: cardWidth, height: cardHeight))
+        let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width - 30, height: cardHeight))
+        let myImageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size: cardSize))
 
-        myImageView.image = UIImage(named: "\(cardStrings[row])H" )
+        myImageView.image = UIImage(named: "\(Card.allCards[row].stringValue)H" )
     
         myView.addSubview(myImageView)
         
         return myView
-        
-        //return UIImageView.init(image: UIImage(named: "card2"))
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -110,7 +108,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func calculateOddsForCardSet(cardSet : CardSet) {
-        let allHighCardSets = AllHighCardSets()
+        var allHighCardSets = AllHighCardSets()
        
         if selectedCardType == .pair {
             let allLowerCardsNum = allHighCardSets.totalNum
@@ -140,7 +138,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         cardsLabel.text = finalChance.description
     }
-    func cardDescription(card : Int) -> String{
+    
+    func cardDescription(card: Int) -> String{
         switch card {
         case 11:
             return "J"

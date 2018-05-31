@@ -19,6 +19,8 @@
 		FC4C1E5C1E29483B009B5127 /* Guts_OddsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C1E5B1E29483B009B5127 /* Guts_OddsTests.swift */; };
 		FC6822B31E5D50AD00832522 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */; };
 		FC6822B41E5D50AD00832522 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */; };
+		FCD1CD3620BF9894004AF88A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1CD3520BF9894004AF88A /* Card.swift */; };
+		FCD1CD3820BF98BC004AF88A /* CardSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1CD3720BF98BC004AF88A /* CardSetType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		FC4C1E5D1E29483B009B5127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		FCD1CD3520BF9894004AF88A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		FCD1CD3720BF98BC004AF88A /* CardSetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				FC4C1E4D1E29483B009B5127 /* Assets.xcassets */,
 				FC4C1E4F1E29483B009B5127 /* LaunchScreen.storyboard */,
 				FC4C1E521E29483B009B5127 /* Info.plist */,
+				FCD1CD3520BF9894004AF88A /* Card.swift */,
+				FCD1CD3720BF98BC004AF88A /* CardSetType.swift */,
 			);
 			path = "Guts Odds";
 			sourceTree = "<group>";
@@ -159,17 +165,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Mulloy, Charles";
 				TargetAttributes = {
 					FC4C1E421E29483B009B5127 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 482S22VVQV;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					FC4C1E561E29483B009B5127 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 482S22VVQV;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FC4C1E421E29483B009B5127;
 					};
@@ -225,8 +233,10 @@
 				FC2E0BBB20797A8A00BA3EE4 /* CardSetColumn.swift in Sources */,
 				FC2E0BB920797A5500BA3EE4 /* AllHighCardSets.swift in Sources */,
 				FC2E0BBD20797AAB00BA3EE4 /* CardSet.swift in Sources */,
+				FCD1CD3820BF98BC004AF88A /* CardSetType.swift in Sources */,
 				FC4C1E471E29483B009B5127 /* AppDelegate.swift in Sources */,
 				FC2E0BBF207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift in Sources */,
+				FCD1CD3620BF9894004AF88A /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +287,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -285,7 +297,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -326,7 +343,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -334,7 +353,12 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -368,7 +392,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etrade.dev.mobileproiphone.Guts-Odds";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -381,7 +406,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etrade.dev.mobileproiphone.Guts-Odds";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -395,7 +421,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etrade.dev.mobileproiphone.Guts-OddsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guts Odds.app/Guts Odds";
 			};
 			name = Debug;
@@ -410,7 +437,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.etrade.dev.mobileproiphone.Guts-OddsTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guts Odds.app/Guts Odds";
 			};
 			name = Release;

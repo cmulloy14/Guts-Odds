@@ -27,7 +27,7 @@ class NumPlayerPickerViewDelegate: NSObject, UIPickerViewDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-         return NSAttributedString(string: numPlayers[row].description, attributes: [NSForegroundColorAttributeName:UIColor.white])
+         return NSAttributedString(string: numPlayers[row].description, attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

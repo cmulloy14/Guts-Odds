@@ -8,17 +8,18 @@
 
 import Foundation
 
-class AllHighCardSets {
+struct AllHighCardSets {
     let cards = [3,4,5,6,7,8,9,10,11,12,13,14]
     
     var totalNum = 0
-    var cardSetColumns : [CardSetColumn]
+    var cardSetColumns =  [CardSetColumn]()
     
     init() {
-        cardSetColumns = []
+        
         for card in cards {
             cardSetColumns.append(CardSetColumn(type: .highCard, number: card))
         }
+        
         for cardSetColumn in cardSetColumns {
             for cardSet in cardSetColumn.cardSets {
                 totalNum += cardSet.number
@@ -26,10 +27,10 @@ class AllHighCardSets {
         }
     }
     
-    func reduceNumberFromSetsWithCard(card : Int) {
+    mutating func reduceNumberFromSetsWithCard(card: Int) {
         totalNum = 0
         for cardSetColumn in cardSetColumns {
-            for cardSet in cardSetColumn.cardSets {
+            for var cardSet in cardSetColumn.cardSets {
                 cardSet.removeCardFromSet(card: card)
             }
         }
@@ -40,7 +41,7 @@ class AllHighCardSets {
         }
     }
     
-    func numberOfCardsInLowerSetThan(set : CardSet) -> Int {
+    func numberOfCardsInLowerSetThan(set: CardSet) -> Int {
         var num = 0
         for cardSetColumn in cardSetColumns {
             for cardset in cardSetColumn.cardSets {
