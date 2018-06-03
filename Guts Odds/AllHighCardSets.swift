@@ -15,7 +15,6 @@ struct AllHighCardSets {
     var cardSetColumns =  [CardSetColumn]()
     
     init() {
-        
         for card in cards {
             cardSetColumns.append(CardSetColumn(type: .highCard, number: card))
         }
