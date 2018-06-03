@@ -117,7 +117,7 @@ extension ViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width - 30, height: cardHeight))
+        let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width - 45, height: cardHeight))
         let myImageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size: cardSize))
         
         myImageView.image = UIImage(named: "\(Card.allCards[row].stringValue)H" )
