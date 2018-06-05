@@ -44,7 +44,9 @@ struct AllHighCardSets {
         var num = 0
         for cardSetColumn in cardSetColumns {
             for cardset in cardSetColumn.cardSets {
-                if set.card1 == cardset.card1 && set.card2 == cardset.card2 {
+                
+                if (set.card1 == cardset.card1 && set.card2 == cardset.card2) || (set.card1 == cardset.card2 && set.card2 == cardset.card1) {
+                    
                     return num
                 }
                 num = num + cardset.number
