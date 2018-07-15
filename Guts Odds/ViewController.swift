@@ -130,7 +130,6 @@ extension ViewController: UIPickerViewDataSource {
 
 extension ViewController: UIPickerViewDelegate {
     
-    
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return cardHeight
     }
@@ -143,17 +142,15 @@ extension ViewController: UIPickerViewDelegate {
         defer {
             pickersChanged()
         }
-        if pickerView == card1PickerView {
-            myCard1 = cards[row]
-        }
-        else if pickerView == card2PickerView {
-            myCard2 = cards[row]
-        }
+        
+        myCard1 = pickerView == card1PickerView ? cards[row] : myCard1
+        myCard2 = pickerView == card2PickerView ? cards[row] : myCard2
+        
     }
     
 }
 
-extension ViewController: pickerVCDelegate {
+extension ViewController: NumPlayerPickerSelectionDelegate {
     func pickersChanged() {
         calculateOddsForCardSet(cardSet: CardSet(type: selectedCardType, card1: myCard1, card2: myCard2))
     }

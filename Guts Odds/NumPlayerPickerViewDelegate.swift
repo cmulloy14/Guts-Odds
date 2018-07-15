@@ -8,16 +8,18 @@
 
 import UIKit
 
-protocol pickerVCDelegate: class {
+protocol NumPlayerPickerSelectionDelegate: class {
     func pickersChanged()
 }
 
-class NumPlayerPickerViewDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+class NumPlayerPickerViewDelegate: NSObject  {
     let numPlayers = [2,3,4,5,6,7,8,9,10]
     var currentSelection = 2
-    weak var vcDelegate: pickerVCDelegate?
-    
+    weak var vcDelegate: NumPlayerPickerSelectionDelegate?
+}
+
+
+extension NumPlayerPickerViewDelegate: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -27,9 +29,12 @@ class NumPlayerPickerViewDelegate: NSObject, UIPickerViewDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-         return NSAttributedString(string: numPlayers[row].description, attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
+        return NSAttributedString(string: numPlayers[row].description, attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
     }
-    
+}
+
+
+extension NumPlayerPickerViewDelegate:  UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentSelection = numPlayers[row]
         vcDelegate?.pickersChanged()

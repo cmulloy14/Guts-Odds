@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum CardSetType {
+    case highCard, pair
+}
+
 enum Card: Int {
     case two = 2, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace
     

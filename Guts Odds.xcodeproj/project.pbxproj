@@ -20,7 +20,6 @@
 		FC6822B31E5D50AD00832522 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */; };
 		FC6822B41E5D50AD00832522 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */; };
 		FCD1CD3620BF9894004AF88A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1CD3520BF9894004AF88A /* Card.swift */; };
-		FCD1CD3820BF98BC004AF88A /* CardSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1CD3720BF98BC004AF88A /* CardSetType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		FCD1CD3520BF9894004AF88A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		FCD1CD3720BF98BC004AF88A /* CardSetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,20 +91,15 @@
 		FC4C1E451E29483B009B5127 /* Guts Odds */ = {
 			isa = PBXGroup;
 			children = (
+				FC916D7C20D89A710003E6C0 /* Card Models */,
+				FC916D7920D89A310003E6C0 /* CardCollectionViewCell */,
 				FC4C1E461E29483B009B5127 /* AppDelegate.swift */,
-				FC2E0BB820797A5500BA3EE4 /* AllHighCardSets.swift */,
-				FC2E0BBA20797A8A00BA3EE4 /* CardSetColumn.swift */,
 				FC4C1E481E29483B009B5127 /* ViewController.swift */,
-				FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */,
-				FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */,
-				FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */,
 				FC4C1E4A1E29483B009B5127 /* Main.storyboard */,
 				FC2E0BBE207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift */,
 				FC4C1E4D1E29483B009B5127 /* Assets.xcassets */,
 				FC4C1E4F1E29483B009B5127 /* LaunchScreen.storyboard */,
 				FC4C1E521E29483B009B5127 /* Info.plist */,
-				FCD1CD3520BF9894004AF88A /* Card.swift */,
-				FCD1CD3720BF98BC004AF88A /* CardSetType.swift */,
 			);
 			path = "Guts Odds";
 			sourceTree = "<group>";
@@ -118,6 +111,26 @@
 				FC4C1E5D1E29483B009B5127 /* Info.plist */,
 			);
 			path = "Guts OddsTests";
+			sourceTree = "<group>";
+		};
+		FC916D7920D89A310003E6C0 /* CardCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */,
+				FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */,
+			);
+			path = CardCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		FC916D7C20D89A710003E6C0 /* Card Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCD1CD3520BF9894004AF88A /* Card.swift */,
+				FC2E0BB820797A5500BA3EE4 /* AllHighCardSets.swift */,
+				FC2E0BBA20797A8A00BA3EE4 /* CardSetColumn.swift */,
+				FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */,
+			);
+			path = "Card Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +246,6 @@
 				FC2E0BBB20797A8A00BA3EE4 /* CardSetColumn.swift in Sources */,
 				FC2E0BB920797A5500BA3EE4 /* AllHighCardSets.swift in Sources */,
 				FC2E0BBD20797AAB00BA3EE4 /* CardSet.swift in Sources */,
-				FCD1CD3820BF98BC004AF88A /* CardSetType.swift in Sources */,
 				FC4C1E471E29483B009B5127 /* AppDelegate.swift in Sources */,
 				FC2E0BBF207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift in Sources */,
 				FCD1CD3620BF9894004AF88A /* Card.swift in Sources */,

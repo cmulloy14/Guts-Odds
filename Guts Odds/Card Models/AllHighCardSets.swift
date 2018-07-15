@@ -12,6 +12,8 @@ struct AllHighCardSets {
     let cards = [3,4,5,6,7,8,9,10,11,12,13,14]
     
     var totalNum = 0
+    
+    
     var cardSetColumns =  [CardSetColumn]()
     
     init() {
@@ -24,6 +26,7 @@ struct AllHighCardSets {
                 totalNum += cardSet.number
             }
         }
+        
     }
     
     mutating func reduceNumberFromSetsWithCard(card: Int) {
@@ -40,6 +43,12 @@ struct AllHighCardSets {
         }
     }
     
+    
+    /**
+     Determine the number of cards in the CardSet Column that are lower than the given CardSet.
+     For Example, The Card Set Column for 6's contains CardSet's 6-5, 6-4, 6-3, and 6-2.
+     So if we provide this function with the CardSet of 6-5, it will return the total number of cards in CardSets 6-4, 6-3, and 6-2.
+    */
     func numberOfCardsInLowerSetThan(set: CardSet) -> Int {
         var num = 0
         for cardSetColumn in cardSetColumns {
