@@ -11,51 +11,36 @@ import Foundation
 struct AllHighCardSets {
     let cards = [3,4,5,6,7,8,9,10,11,12,13,14]
     
-    var totalNum = 0
-    
-    
-    var cardSetColumns =  [CardSetColumn]()
-    
-    init() {
-        for card in cards {
-            cardSetColumns.append(CardSetColumn(type: .highCard, number: card))
+    var cardSetColumns: [CardSetColumn] {
+        return cards.map {
+            CardSetColumn(type: .highCard, number: $0)
         }
-        
-        for cardSetColumn in cardSetColumns {
-            for cardSet in cardSetColumn.cardSets {
-                totalNum += cardSet.number
-            }
-        }
-        
+    }
+    
+    var totalNum: Int {
+        return cardSetColumns.flatMap { $0.cardSets }.map { $0.number }.reduce(0, +)
+
     }
     
     mutating func reduceNumberFromSetsWithCard(card: Int) {
-        totalNum = 0
-        for cardSetColumn in cardSetColumns {
-            for var cardSet in cardSetColumn.cardSets {
+        cardSetColumns.forEach { for var cardSet in $0.cardSets {
                 cardSet.removeCardFromSet(card: card)
-            }
-        }
-        for cardSetColumn in cardSetColumns {
-            for cardSet in cardSetColumn.cardSets {
-                totalNum += cardSet.number
             }
         }
     }
     
-    
     /**
-     Determine the number of cards in the CardSet Column that are lower than the given CardSet.
-     For Example, The Card Set Column for 6's contains CardSet's 6-5, 6-4, 6-3, and 6-2.
-     So if we provide this function with the CardSet of 6-5, it will return the total number of cards in CardSets 6-4, 6-3, and 6-2.
+     Determine the number of cards in the  that are lower than the given CardSet.
+     
+     So if we provide this function with the CardSet of 6-5, it will return the total number of cards in CardSets 6-4, 6-3, and 6-2, added to the total number of cards in CardSet columns for 5s, 4s, and 3s. (5-4, 5-3, 5-2, 4-3, 4-2, 3-2)
     */
+
+    
     func numberOfCardsInLowerSetThan(set: CardSet) -> Int {
         var num = 0
         for cardSetColumn in cardSetColumns {
             for cardset in cardSetColumn.cardSets {
-                
-                if (set.card1 == cardset.card1 && set.card2 == cardset.card2) || (set.card1 == cardset.card2 && set.card2 == cardset.card1) {
-                    
+                if set == cardset {
                     return num
                 }
                 num = num + cardset.number

@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     //MARK: Default Values
     var myCard1 = 3
     var myCard2 = 2
-    var numberOfPlayers = 2
+    var numberOfPlayers = 5
     let cardHeight: CGFloat = 150.0
     let cardWidth: CGFloat = 100.0
     
@@ -88,20 +88,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        card1PickerView.selectRow(1, inComponent: 0, animated: true)
         
         numberOfPlayersPickerView.delegate = numPickerDelegate
         numberOfPlayersPickerView.dataSource = numPickerDelegate
         
         numPickerDelegate.vcDelegate = self
-        cardsLabel.text = calculatedChance.description
+        
+        calculateOddsForCardSet(cardSet: CardSet(type: selectedCardType, card1: myCard1, card2: myCard2))
+        
+        setupUI()
     }
     
+    private func setupUI() {
+        numberOfPlayersPickerView.selectRow(3, inComponent: 0, animated: false)
+        card1PickerView.selectRow(1, inComponent: 0, animated: false)
+    }
   
     
     func calculateOddsForCardSet(cardSet: CardSet) {
-        cardsLabel.text = calculatedChance.description
-        return
+        cardsLabel.text = "\(calculatedChance.description)%"
     }
     
 }

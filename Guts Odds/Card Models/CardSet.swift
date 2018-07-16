@@ -18,6 +18,10 @@ struct CardSet {
     //any high card set will have 32, until a card is 'removed' from the card set
     var number: Int
     
+    var cards: [Int] {
+        return [card1, card2]
+    }
+    
     init(type: CardSetType, card1: Int, card2 : Int) {
         self.type = type
         self.card1 = card1
@@ -26,9 +30,15 @@ struct CardSet {
     }
     
     mutating func removeCardFromSet(card: Int) {
-        if(card1 == card || card2 == card) {
+        if (card1 == card || card2 == card) {
             number = 24
         }
     }
     
+}
+
+extension CardSet: Equatable {
+    static func ==(lhs: CardSet, rhs: CardSet) -> Bool {
+        return lhs.cards.contains(rhs.card1) && lhs.cards.contains(rhs.card2)
+    }
 }

@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="hSA-RD-bwn">
-                                <rect key="frame" x="209" y="404.5" width="150" height="207.5"/>
+                                <rect key="frame" x="209" y="405" width="150" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Rby-IL-Ks2"/>
                                 </constraints>
@@ -35,22 +35,15 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="vNw-YZ-Ghf"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3e-6M-OnM">
-                                <rect key="frame" x="16" y="312.5" width="343" height="42"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="00.000">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" metaFont="system" size="36"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3e-6M-OnM">
+                                <rect key="frame" x="16" y="312" width="343" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-fq-R5c">
-                                <rect key="frame" x="142" y="28" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="126.5" y="28" width="122" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -65,7 +58,7 @@
                                 </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7e-ry-qoV">
-                                <rect key="frame" x="112" y="57" width="150" height="216"/>
+                                <rect key="frame" x="112" y="65" width="150" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0AY-XL-bOQ"/>
                                 </constraints>
@@ -74,12 +67,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Jvg-P6-ShL"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Winning:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcC-pW-hRg">
+                                <rect key="frame" x="16" y="290.5" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.46991579205958511" green="1" blue="0.35990710326970199" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hSA-RD-bwn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="S3e-6M-OnM" secondAttribute="bottom" constant="50" id="1F2-iG-ClI"/>
                             <constraint firstItem="S3e-6M-OnM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3pK-T1-a2i"/>
                             <constraint firstAttribute="trailing" secondItem="Ysl-cb-8eI" secondAttribute="trailing" id="6wL-Hh-nRn"/>
+                            <constraint firstItem="bcC-pW-hRg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AJy-Nz-U2K"/>
                             <constraint firstItem="M7e-ry-qoV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NRy-WS-scU"/>
                             <constraint firstItem="BfP-fq-R5c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P3u-az-0FE"/>
                             <constraint firstItem="S3e-6M-OnM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M7e-ry-qoV" secondAttribute="bottom" constant="30" id="R6n-BT-tet"/>
@@ -87,6 +87,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ysl-cb-8eI" secondAttribute="bottom" id="ZBi-qP-g6P"/>
                             <constraint firstItem="S3e-6M-OnM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZQj-Sy-n8S"/>
                             <constraint firstItem="Ysl-cb-8eI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cPo-lD-Xf1"/>
+                            <constraint firstItem="bcC-pW-hRg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d5K-bI-aoh"/>
                             <constraint firstItem="M7e-ry-qoV" firstAttribute="top" secondItem="BfP-fq-R5c" secondAttribute="bottom" constant="8" id="eaK-hd-5hr"/>
                             <constraint firstItem="dIX-B3-Hcu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hLq-sZ-RCc"/>
                             <constraint firstItem="hSA-RD-bwn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hRq-iV-HEy"/>
@@ -95,6 +96,7 @@
                             <constraint firstItem="BfP-fq-R5c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="p7j-fG-DTF"/>
                             <constraint firstItem="M7e-ry-qoV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sh2-jg-CwK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dIX-B3-Hcu" secondAttribute="bottom" constant="55" id="y5X-S4-I6J"/>
+                            <constraint firstItem="S3e-6M-OnM" firstAttribute="top" secondItem="bcC-pW-hRg" secondAttribute="bottom" id="zFG-hs-3fz"/>
                             <constraint firstItem="Ysl-cb-8eI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zuk-f5-VDd"/>
                         </constraints>
                     </view>
@@ -107,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33.75" y="-39.08450704225352"/>
+            <point key="canvasLocation" x="-34.399999999999999" y="-39.130434782608695"/>
         </scene>
     </scenes>
     <resources>
