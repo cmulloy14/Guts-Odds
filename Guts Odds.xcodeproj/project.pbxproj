@@ -12,6 +12,7 @@
 		FC2E0BBD20797AAB00BA3EE4 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */; };
 		FC2E0BBF207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BBE207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift */; };
 		FC43A66920FC0F2700F76A49 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43A66820FC0F2700F76A49 /* CardTests.swift */; };
+		FC43A66D20FC2D5E00F76A49 /* AllHighCardSetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43A66C20FC2D5E00F76A49 /* AllHighCardSetsTests.swift */; };
 		FC4C1E471E29483B009B5127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C1E461E29483B009B5127 /* AppDelegate.swift */; };
 		FC4C1E491E29483B009B5127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C1E481E29483B009B5127 /* ViewController.swift */; };
 		FC4C1E4C1E29483B009B5127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4C1E4A1E29483B009B5127 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		FC2E0BBE207AC17800BA3EE4 /* NumPlayerPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPlayerPickerViewDelegate.swift; sourceTree = "<group>"; };
 		FC43A66820FC0F2700F76A49 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		FC43A66C20FC2D5E00F76A49 /* AllHighCardSetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHighCardSetsTests.swift; sourceTree = "<group>"; };
 		FC4C1E431E29483B009B5127 /* Guts Odds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guts Odds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4C1E461E29483B009B5127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC4C1E481E29483B009B5127 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				FC4C1E5B1E29483B009B5127 /* Guts_OddsTests.swift */,
 				FC4C1E5D1E29483B009B5127 /* Info.plist */,
 				FC43A66820FC0F2700F76A49 /* CardTests.swift */,
+				FC43A66C20FC2D5E00F76A49 /* AllHighCardSetsTests.swift */,
 			);
 			path = "Guts OddsTests";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4C1E5C1E29483B009B5127 /* Guts_OddsTests.swift in Sources */,
+				FC43A66D20FC2D5E00F76A49 /* AllHighCardSetsTests.swift in Sources */,
 				FC43A66920FC0F2700F76A49 /* CardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
