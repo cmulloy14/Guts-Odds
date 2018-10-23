@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CardSetColumn {
+struct CardSetColumn {
     var cardSets: [CardSet]
     var cardForColumn: Int
     

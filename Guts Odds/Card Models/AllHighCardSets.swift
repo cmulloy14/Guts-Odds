@@ -14,14 +14,12 @@ struct AllHighCardSets {
     private let cardColumns = Card.allCards.filter { $0 != .two }.map { $0.rawValue }
     
     var cardSetColumns: [CardSetColumn] {
-        return cardColumns.map {
-            CardSetColumn(type: .highCard, number: $0)
-        }
+        return cardColumns.map { CardSetColumn(type: .highCard, number: $0) }
     }
     
+    //The total number of cards in thes High Card Set
     var totalNum: Int {
         return cardSetColumns.flatMap { $0.cardSets }.map { $0.number }.reduce(0, +)
-
     }
     
     mutating func reduceNumberFromSetsWithCard(card: Int) {

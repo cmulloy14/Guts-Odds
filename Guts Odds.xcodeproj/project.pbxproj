@@ -19,8 +19,6 @@
 		FC4C1E4E1E29483B009B5127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4C1E4D1E29483B009B5127 /* Assets.xcassets */; };
 		FC4C1E511E29483B009B5127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC4C1E4F1E29483B009B5127 /* LaunchScreen.storyboard */; };
 		FC4C1E5C1E29483B009B5127 /* Guts_OddsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C1E5B1E29483B009B5127 /* Guts_OddsTests.swift */; };
-		FC6822B31E5D50AD00832522 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */; };
-		FC6822B41E5D50AD00832522 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */; };
 		FCD1CD3620BF9894004AF88A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1CD3520BF9894004AF88A /* Card.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,8 +49,6 @@
 		FC4C1E571E29483B009B5127 /* Guts OddsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Guts OddsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4C1E5B1E29483B009B5127 /* Guts_OddsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guts_OddsTests.swift; sourceTree = "<group>"; };
 		FC4C1E5D1E29483B009B5127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
-		FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		FCD1CD3520BF9894004AF88A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				FC916D7C20D89A710003E6C0 /* Card Models */,
-				FC916D7920D89A310003E6C0 /* CardCollectionViewCell */,
 				FC4C1E461E29483B009B5127 /* AppDelegate.swift */,
 				FC4C1E481E29483B009B5127 /* ViewController.swift */,
 				FC4C1E4A1E29483B009B5127 /* Main.storyboard */,
@@ -117,15 +112,6 @@
 				FC43A66C20FC2D5E00F76A49 /* AllHighCardSetsTests.swift */,
 			);
 			path = "Guts OddsTests";
-			sourceTree = "<group>";
-		};
-		FC916D7920D89A310003E6C0 /* CardCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				FC6822B11E5D50AD00832522 /* CardCollectionViewCell.swift */,
-				FC6822B21E5D50AD00832522 /* CardCollectionViewCell.xib */,
-			);
-			path = CardCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		FC916D7C20D89A710003E6C0 /* Card Models */ = {
@@ -189,7 +175,7 @@
 				TargetAttributes = {
 					FC4C1E421E29483B009B5127 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 482S22VVQV;
+						DevelopmentTeam = C76CL4JSZC;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -226,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC6822B41E5D50AD00832522 /* CardCollectionViewCell.xib in Resources */,
 				FC4C1E511E29483B009B5127 /* LaunchScreen.storyboard in Resources */,
 				FC4C1E4E1E29483B009B5127 /* Assets.xcassets in Resources */,
 				FC4C1E4C1E29483B009B5127 /* Main.storyboard in Resources */,
@@ -248,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4C1E491E29483B009B5127 /* ViewController.swift in Sources */,
-				FC6822B31E5D50AD00832522 /* CardCollectionViewCell.swift in Sources */,
 				FC2E0BBB20797A8A00BA3EE4 /* CardSetColumn.swift in Sources */,
 				FC2E0BB920797A5500BA3EE4 /* AllHighCardSets.swift in Sources */,
 				FC2E0BBD20797AAB00BA3EE4 /* CardSet.swift in Sources */,
@@ -407,13 +391,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 482S22VVQV;
+				DEVELOPMENT_TEAM = C76CL4JSZC;
 				INFOPLIST_FILE = "Guts Odds/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.etrade.dev.mobileproiphone.Guts-Odds";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Oatified.Guts-Odds";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -421,13 +405,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 482S22VVQV;
+				DEVELOPMENT_TEAM = C76CL4JSZC;
 				INFOPLIST_FILE = "Guts Odds/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.etrade.dev.mobileproiphone.Guts-Odds";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Oatified.Guts-Odds";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

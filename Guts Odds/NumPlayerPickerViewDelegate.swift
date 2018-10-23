@@ -13,7 +13,7 @@ protocol NumPlayerPickerSelectionDelegate: class {
 }
 
 class NumPlayerPickerViewDelegate: NSObject  {
-    let numPlayers = [2,3,4,5,6,7,8,9,10]
+    let numPlayers = (2...10).map { $0 }
     var currentSelection = 2
     weak var vcDelegate: NumPlayerPickerSelectionDelegate?
 }
@@ -29,7 +29,11 @@ extension NumPlayerPickerViewDelegate: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        return NSAttributedString(string: numPlayers[row].description, attributes: [NSAttributedStringKey.foregroundColor:UIColor.white])
+        return NSAttributedString(string: numPlayers[row].description, attributes:
+            [NSAttributedString.Key.foregroundColor:UIColor.white,
+             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22.0)
+             ]
+        )
     }
 }
 
