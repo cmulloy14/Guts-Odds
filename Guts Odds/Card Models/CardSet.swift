@@ -14,8 +14,8 @@ struct CardSet {
     var card1: Int
     var card2: Int
     
-    //number reperesents the number of cards in the card set
-    //any high card set will have 32, until a card is 'removed' from the card set
+    // number reperesents the number of cards in the card set
+    // any high card set will have 32, until a card is 'removed' from the card set
     var number: Int
     
     var cards: [Int] {

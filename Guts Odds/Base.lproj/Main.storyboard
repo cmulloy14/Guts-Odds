@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,14 +18,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feltBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ysl-cb-8eI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="hSA-RD-bwn">
-                                <rect key="frame" x="209" y="405" width="150" height="207"/>
+                                <rect key="frame" x="154" y="322" width="150" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Rby-IL-Ks2"/>
                                 </constraints>
@@ -36,19 +35,19 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3e-6M-OnM">
-                                <rect key="frame" x="16" y="312" width="343" height="43"/>
+                                <rect key="frame" x="16" y="262.5" width="288" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-fq-R5c">
-                                <rect key="frame" x="126.5" y="28" width="122" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-fq-R5c">
+                                <rect key="frame" x="64.5" y="28" width="191" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-B3-Hcu">
-                                <rect key="frame" x="16" y="396" width="150" height="216"/>
+                                <rect key="frame" x="16" y="322" width="150" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="eq5-gf-nR5"/>
                                 </constraints>
@@ -58,7 +57,7 @@
                                 </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7e-ry-qoV">
-                                <rect key="frame" x="112" y="65" width="150" height="216"/>
+                                <rect key="frame" x="85" y="8.5" width="150" height="227.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0AY-XL-bOQ"/>
                                 </constraints>
@@ -68,7 +67,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Winning:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcC-pW-hRg">
-                                <rect key="frame" x="16" y="290.5" width="343" height="21.5"/>
+                                <rect key="frame" x="16" y="241" width="288" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -76,26 +75,25 @@
                         </subviews>
                         <color key="backgroundColor" red="0.46991579205958511" green="1" blue="0.35990710326970199" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="hSA-RD-bwn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="S3e-6M-OnM" secondAttribute="bottom" constant="50" id="1F2-iG-ClI"/>
                             <constraint firstItem="S3e-6M-OnM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3pK-T1-a2i"/>
                             <constraint firstAttribute="trailing" secondItem="Ysl-cb-8eI" secondAttribute="trailing" id="6wL-Hh-nRn"/>
                             <constraint firstItem="bcC-pW-hRg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AJy-Nz-U2K"/>
                             <constraint firstItem="M7e-ry-qoV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NRy-WS-scU"/>
                             <constraint firstItem="BfP-fq-R5c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P3u-az-0FE"/>
-                            <constraint firstItem="S3e-6M-OnM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M7e-ry-qoV" secondAttribute="bottom" constant="30" id="R6n-BT-tet"/>
                             <constraint firstItem="dIX-B3-Hcu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TAu-Ip-3Me"/>
+                            <constraint firstItem="bcC-pW-hRg" firstAttribute="top" secondItem="M7e-ry-qoV" secondAttribute="bottom" constant="5" id="UKY-3L-zuI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ysl-cb-8eI" secondAttribute="bottom" id="ZBi-qP-g6P"/>
                             <constraint firstItem="S3e-6M-OnM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZQj-Sy-n8S"/>
                             <constraint firstItem="Ysl-cb-8eI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cPo-lD-Xf1"/>
                             <constraint firstItem="bcC-pW-hRg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d5K-bI-aoh"/>
-                            <constraint firstItem="M7e-ry-qoV" firstAttribute="top" secondItem="BfP-fq-R5c" secondAttribute="bottom" constant="8" id="eaK-hd-5hr"/>
                             <constraint firstItem="dIX-B3-Hcu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hLq-sZ-RCc"/>
                             <constraint firstItem="hSA-RD-bwn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hRq-iV-HEy"/>
                             <constraint firstItem="S3e-6M-OnM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jhY-yU-7Gl"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hSA-RD-bwn" secondAttribute="bottom" constant="55" id="lKu-xc-qOG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hSA-RD-bwn" secondAttribute="bottom" constant="30" id="lKu-xc-qOG"/>
+                            <constraint firstItem="M7e-ry-qoV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="mJo-dI-0kh"/>
                             <constraint firstItem="BfP-fq-R5c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="p7j-fG-DTF"/>
                             <constraint firstItem="M7e-ry-qoV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sh2-jg-CwK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dIX-B3-Hcu" secondAttribute="bottom" constant="55" id="y5X-S4-I6J"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dIX-B3-Hcu" secondAttribute="bottom" constant="30" id="y5X-S4-I6J"/>
                             <constraint firstItem="S3e-6M-OnM" firstAttribute="top" secondItem="bcC-pW-hRg" secondAttribute="bottom" id="zFG-hs-3fz"/>
                             <constraint firstItem="Ysl-cb-8eI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zuk-f5-VDd"/>
                         </constraints>
@@ -109,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34.399999999999999" y="-39.130434782608695"/>
+            <point key="canvasLocation" x="-35.625" y="-40.140845070422536"/>
         </scene>
     </scenes>
     <resources>
