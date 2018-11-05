@@ -12,6 +12,7 @@ import XCTest
 class AllHighCardSetsTests: XCTestCase {
     
     var allHighCardSets: AllHighCardSets?
+    var testCardSet = CardSet(type: CardSetType.highCard, card1: 9, card2: 5)
     
     override func setUp() {
         super.setUp()
@@ -29,7 +30,7 @@ class AllHighCardSetsTests: XCTestCase {
     }
     
     func testRemovingCards() {
-        
+        let numberOfLowerCards = allHighCardSets?.numberOfCardsInLowerSetThan(set: testCardSet)
         
     }
     
