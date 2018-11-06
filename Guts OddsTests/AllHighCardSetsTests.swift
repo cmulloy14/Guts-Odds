@@ -31,6 +31,8 @@ class AllHighCardSetsTests: XCTestCase {
     
     func testRemovingCards() {
         let numberOfLowerCards = allHighCardSets?.numberOfCardsInLowerSetThan(set: testCardSet)
+        print(numberOfLowerCards)
+        XCTAssertEqual(numberOfLowerCards, 768)
         
     }
     

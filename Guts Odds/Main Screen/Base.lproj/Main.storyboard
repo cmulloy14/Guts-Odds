@@ -57,7 +57,7 @@
                                 </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7e-ry-qoV">
-                                <rect key="frame" x="85" y="8.5" width="150" height="227.5"/>
+                                <rect key="frame" x="85" y="9" width="150" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0AY-XL-bOQ"/>
                                 </constraints>

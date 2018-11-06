@@ -15,26 +15,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberOfPlayersPickerView: UIPickerView!
     @IBOutlet weak var cardsLabel: UILabel!
     
-    let cards = [2,3,4,5,6,7,8,9,10,11,12,13,14]
-    let numPlayers = [2,3,4,5,6,7,8,9,10]
+    let cards = (2...14).map { $0 }
+    let numPlayers = (2...10).map { $0 }
 
 
     var selectedCardType: CardSetType {
         return myCard1 == myCard2 ? .pair : .highCard
     }
     
-    //MARK: Default Values
+    // MARK: Starting Values
     var myCard1 = 3
     var myCard2 = 2
     var numberOfPlayers = 5
-    let cardHeight: CGFloat = 150.0
-    let cardWidth: CGFloat = 100.0
     
+    private enum UIConstants {
+        static let cardHeight: CGFloat = 150
+        static let cardWidth: CGFloat = 100
+        static let cardMargin: CGFloat = 45
+    }
     
     let numPickerDelegate = NumPlayerPickerViewDelegate()
 
     var cardSize: CGSize {
-        return CGSize(width: cardWidth, height: cardHeight)
+        return CGSize(width: UIConstants.cardWidth, height: UIConstants.cardHeight)
     }
     
     var calculatedChance: Double {
@@ -43,7 +46,6 @@ class ViewController: UIViewController {
 
         if selectedCardType == .pair {
             var addedPairValue = 0
-            
             for card in cards {
                 if card != myCard1 {
                     addedPairValue += 12
@@ -56,13 +58,7 @@ class ViewController: UIViewController {
             let finalCardValue: Double = Double(allHighCardSets.totalNum + addedPairValue)
             let chance: Double = finalCardValue / 2652
             let numPlayers = Double(numPickerDelegate.currentSelection) - 1
-            var finalChance = pow(chance, numPlayers)
-            
-            finalChance = finalChance * 100
-            finalChance = Double(round(1000*finalChance)/1000)
-            
-            return finalChance
-            
+            return pow(chance, numPlayers) * 100
         }
         else {
             let cardSet = CardSet(type: selectedCardType, card1: myCard1, card2: myCard2)
@@ -74,14 +70,7 @@ class ViewController: UIViewController {
             let divisor: Double = Double(numPickerDelegate.currentSelection) - 1
             
             let chance: Double = Double(num) / Double(allHighCardSets.totalNum + (13*12))
-            
-            var finalChance: Double = 1
-            
-            finalChance = pow(chance, divisor)
-            finalChance = finalChance * 100
-            finalChance = Double(round(1000*finalChance)/1000)
-            
-            return finalChance
+            return pow(chance, divisor) * 100
         }
         
     }
@@ -94,7 +83,7 @@ class ViewController: UIViewController {
         
         numPickerDelegate.vcDelegate = self
         
-        calculateOddsForCardSet(cardSet: CardSet(type: selectedCardType, card1: myCard1, card2: myCard2))
+        calculateOddsForCardSet(CardSet(type: selectedCardType, card1: myCard1, card2: myCard2))
         
         setupUI()
     }
@@ -105,8 +94,8 @@ class ViewController: UIViewController {
     }
   
     
-    func calculateOddsForCardSet(cardSet: CardSet) {
-        cardsLabel.text = "\(calculatedChance.description)%"
+    func calculateOddsForCardSet(_ cardSet: CardSet) {
+        cardsLabel.text =  "\(String(format: "%.2f", calculatedChance))%"
     }
     
 }
@@ -122,28 +111,28 @@ extension ViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.bounds.width - 45, height: cardHeight))
-        let myImageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size: cardSize))
+        let view = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: pickerView.bounds.width - UIConstants.cardMargin, height: UIConstants.cardHeight)))
+        let imageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size: cardSize))
         
-        myImageView.image = UIImage(named: "\(Card.allCards[row].stringValue)H" )
+        imageView.image = UIImage(named: "\(Card.allCards[row].stringValue)H" )
+        view.addSubview(imageView)
         
-        myView.addSubview(myImageView)
-        
-        return myView
+        return view
     }
 }
 
 extension ViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return cardHeight
+        return UIConstants.cardHeight
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return cardWidth
+        return UIConstants.cardWidth
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         defer {
             pickersChanged()
         }
@@ -157,7 +146,7 @@ extension ViewController: UIPickerViewDelegate {
 
 extension ViewController: NumPlayerPickerSelectionDelegate {
     func pickersChanged() {
-        calculateOddsForCardSet(cardSet: CardSet(type: selectedCardType, card1: myCard1, card2: myCard2))
+        calculateOddsForCardSet(CardSet(type: selectedCardType, card1: myCard1, card2: myCard2))
     }
 }
 
