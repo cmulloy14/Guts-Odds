@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     // MARK: Starting Values
     var myCard1 = 3
     var myCard2 = 2
-    var numberOfPlayers = 5
+    var numberOfPlayers = 2
     
     private enum UIConstants {
         static let cardHeight: CGFloat = 150
@@ -80,6 +80,7 @@ class ViewController: UIViewController {
         
         numberOfPlayersPickerView.delegate = numPickerDelegate
         numberOfPlayersPickerView.dataSource = numPickerDelegate
+    
         
         numPickerDelegate.vcDelegate = self
         
@@ -89,7 +90,7 @@ class ViewController: UIViewController {
     }
     
     private func setupUI() {
-        numberOfPlayersPickerView.selectRow(3, inComponent: 0, animated: false)
+        numberOfPlayersPickerView.selectRow(0, inComponent: 0, animated: true)
         card1PickerView.selectRow(1, inComponent: 0, animated: false)
     }
   
