@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C1278E23D6517100EE7944 /* Guts-Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 42C1278D23D6517100EE7944 /* Guts-Icon.jpg */; };
 		FC2E0BB920797A5500BA3EE4 /* AllHighCardSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BB820797A5500BA3EE4 /* AllHighCardSets.swift */; };
 		FC2E0BBB20797A8A00BA3EE4 /* CardSetColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BBA20797A8A00BA3EE4 /* CardSetColumn.swift */; };
 		FC2E0BBD20797AAB00BA3EE4 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42C1278D23D6517100EE7944 /* Guts-Icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Guts-Icon.jpg"; sourceTree = "<group>"; };
 		FC2E0BB820797A5500BA3EE4 /* AllHighCardSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHighCardSets.swift; sourceTree = "<group>"; };
 		FC2E0BBA20797A8A00BA3EE4 /* CardSetColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetColumn.swift; sourceTree = "<group>"; };
 		FC2E0BBC20797AAB00BA3EE4 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		FC4C1E451E29483B009B5127 /* Guts Odds */ = {
 			isa = PBXGroup;
 			children = (
+				42C1278D23D6517100EE7944 /* Guts-Icon.jpg */,
 				E9E48FA5219137210041DBF2 /* Main Screen */,
 				E9E48FA4219137100041DBF2 /* PickerView Delegates */,
 				FC916D7C20D89A710003E6C0 /* Card Models */,
@@ -209,6 +212,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -229,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC4C1E511E29483B009B5127 /* LaunchScreen.storyboard in Resources */,
+				42C1278E23D6517100EE7944 /* Guts-Icon.jpg in Resources */,
 				FC4C1E4E1E29483B009B5127 /* Assets.xcassets in Resources */,
 				FC4C1E4C1E29483B009B5127 /* Main.storyboard in Resources */,
 			);
