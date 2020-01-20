@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
+options: "20d5b1c1a7ced42eeb279d58ccc5bcfe"
+build_time: [1578977437, 867100000]
+inputs:
+  "/Users/oat/Desktop/Guts-Odds/Guts Odds/ViewController.swift": [9223372036, 854775807]
+  "/Users/oat/Desktop/Guts-Odds/Guts Odds/Card Models/CardSetColumn.swift": [9223372036, 854775807]
+  "/Users/oat/Desktop/Guts-Odds/Guts Odds/Card Models/AllHighCardSets.swift": [9223372036, 854775807]
+  "/Users/oat/Desktop/Guts-Odds/Guts Odds/Card Models/CardSet.swift": [9223372036, 854775807]
+  "/Users/oat/Desktop/Guts-Odds/Guts Odds/AppDelegate.swift": [9223372036, 854775807]
+  "/Users/oat/Desktop/Guts-Odds/Guts Odds/NumPlayerPickerViewDelegate.swift": [9223372036, 854775807]
+  "/Users/oat/Desktop/Guts-Odds/Guts Odds/Card Models/Card.swift": [9223372036, 854775807]

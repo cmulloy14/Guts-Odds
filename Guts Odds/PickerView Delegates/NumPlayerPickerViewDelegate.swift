@@ -31,7 +31,7 @@ extension NumPlayerPickerViewDelegate: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: numPlayers[row].description, attributes:
             [NSAttributedString.Key.foregroundColor:UIColor.white,
-             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22.0)
+             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 42.0)
              ]
         )
     }
