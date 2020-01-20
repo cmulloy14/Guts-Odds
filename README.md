@@ -7,3 +7,6 @@ This is a simple app that allows the user to select their hand and the number of
 Simply put, the winner is the person with the best hand, which is either a pair or a high card. The best hand being a pair of Aces and the worst hand being a 3-2.
 
 ![image](https://raw.githubusercontent.com/cmulloy14/Guts-Odds/master/Guts%20Odds/Guts-Icon.jpg)
+
+#### [Try the app in your browser](https://appetize.io/app/86m4fgqyree1h2j5a6rfgczzzm?device=iphonexs&scale=75&orientation=portrait&osVersion=13.3) 
+ 
